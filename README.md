@@ -32,7 +32,7 @@ git config --global user.name "Seu nome Aqui"
 ```
 
 ```bash
-config --global user.email seuemail@exemplo.br
+git config --global user.email seuemail@exemplo.br
 ```
 
 ### Clonando o repositório (GitHub)
