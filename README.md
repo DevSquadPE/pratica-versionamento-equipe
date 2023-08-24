@@ -12,7 +12,7 @@
 Por meio deste repositório você poderá praticar o trabalho colaborativo e conhecimentos de versionamento de código com o Git e GitHub.
 
 
-## Requisitos
+## Pré-Requisitos
 
 * Ter perfil no GitHub
 * Ter o Git instalado - caso não tenha, baixe por meio do link a seguir: [Baixar Git](https://git-scm.com/downloads)
@@ -91,7 +91,7 @@ git add nomeArquivo.extensão
 git add .
 ```
 
-3. Adiciona mensagem ao(s) arquivo(s) editados. Ex.: Desenvolvimento de formulário, correção de bug 'x'...
+3. Salva o(s) arquivo(s) editado(s) adicionando uma mensagem. Ex.: Desenvolvimento de formulário, correção de bug 'x'...
 ```bash
 git commit -m "mensagem"
 ```
@@ -102,3 +102,93 @@ git commit -m "mensagem"
 git push origin main
 ```
 
+
+### Comandos - trabalho em equipe
+Ao criar um projeto e versioná-lo, por padrão é criado uma **branch** chamada de **main** que é a **principal** - onde está a aplicação. Porém, **quando trabalhamos em equipe há a necessidade de criarmos outras branchs** para **evitar bugs na aplicação salva na branch main**. Veja abaixo os comandos que podem ser utilizados e quando usá-los:
+
+
+1. Exibe uma lista com todas as branchs do projeto/repositório
+
+```bash
+git branch
+```
+
+<img src="assets/images/screenshots/lista_branchs.jpg" alt="Lista com todas as branchs"  />
+
+<br/>
+
+2. Cria nova branch
+> Ao criar uma nova branch você estará levando para ela uma **cópia da versão do projeto** que está na **branch main**.
+
+```bash
+git branch nomeBranch
+```
+> No exemplo abaixo foi criada uma nova branch com o nome **teste** e, em seguida, o **comando para listar as branchs** foi executado. Veja que agora a **branch teste é exibida na lista**.
+
+<img src="assets/images/screenshots/cria_branch.jpg" alt="cria uma nova branch"  />
+
+<br/>
+
+3. Trocando de branch
+> Observe que a branch selecionada fica com um * (asterisco) e com o **nome na cor verde**.
+
+
+```bash
+git checkout nomeBranch
+```
+
+<img src="assets/images/screenshots/mudando_de_branch.jpg" alt="muda de branch" />
+
+<br/>
+
+4. Enviando a branch para o repositório remoto (GitHub)
+
+- **git push**: ato de enviar as alterações
+- **-u**: Complemento do comando
+- **origin**: Destino
+- **nomeBranch**: Qual branch será enviado do repositório local para o remoto
+
+```bash
+git push origin nomeBranch
+```
+Ou
+
+```bash
+git push -u origin nomeBranch
+```
+
+<br/>
+
+4. Excluindo uma branch do repositório remoto (GitHub)
+
+> Observe que há apenas **UMA diferença** entre o enviar e o excluir. Ao **excluir a branch** são utilizados : (dois pontos) **antes do nome da branch a ser excluída**, enquanto **no enviar branch não tem os pontos** (cuidado para não confundir).
+
+```bash
+git push origin :nomeBranch
+```
+
+<br/>
+
+5. Junta/Une branchs.
+> Esse procedimento costuma ser realizado para juntar/trazer o código de outra branch para a main.
+
+Ex.: Traz todas as alterações da branch especificada para a **main** - ela precisa estar selecionada.
+
+```bash
+git merge nomeBranch
+```
+
+<img src="assets/images/screenshots/unindo_branchs.jpg" alt="Junção de branch" />
+
+
+<br/>
+
+6. Excluindo uma branch do repositório local (sua máquina)
+
+> **OBS**: A branch que você quer excluir não pode estar selecionada.
+
+```bash
+git branch -D nomeBranch
+```
+
+<img src="assets/images/screenshots/excluindo_branch.jpg" alt="Exclusão de branch" />
